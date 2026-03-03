@@ -1,0 +1,77 @@
+/* src/App.css */
+
+/* Основные стили приложения */
+.app-root {
+  min-height: 100vh;
+  background: #f7f8fa;
+  padding-bottom: 2rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Контейнер для таблицы с фиксированной высотой и скроллом */
+.table-responsive {
+  max-height: 600px;          /* Можно изменить на 70vh или 500px — подбери под свой экран */
+  overflow-y: auto;           /* Вертикальный скролл */
+  overflow-x: auto;           /* Горизонтальный скролл, если колонки широкие */
+  border: 1px solid #dee2e6;  /* Красивая рамка */
+  border-radius: 0.375rem;
+  margin: 1rem 0;
+  background: white;
+}
+
+/* Стики-хедер таблицы (заголовки фиксируются сверху при скролле) */
+.table thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f8f9fa;
+  z-index: 2;                 /* Чтобы хедер был поверх строк */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+}
+
+/* Ресайз колонок */
+.resizable-header {
+  position: relative;
+  user-select: none;
+}
+
+.resize-handle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  cursor: col-resize;
+  z-index: 10;
+  background: rgba(0,0,0,0.1); /* Видимый индикатор */
+}
+
+/* Общие стили таблицы */
+.table {
+  margin-bottom: 0;           /* Убираем лишний отступ снизу */
+  width: 100%;
+  min-width: 900px;           /* Чтобы таблица не сжималась слишком сильно */
+}
+
+.table th,
+.table td {
+  min-width: 50px;
+  white-space: nowrap;        /* Текст не переносится в ячейках */
+  vertical-align: middle;
+  padding: 0.75rem;
+}
+
+/* Hover-эффект на строки */
+.table-hover tbody tr:hover {
+  background-color: #f1f3f5;
+  cursor: pointer;
+}
+
+/* Сообщения загрузки и ошибок */
+.alert {
+  margin: 1rem 0;
+}
